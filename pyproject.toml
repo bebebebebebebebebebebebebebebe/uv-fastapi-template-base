@@ -1,0 +1,43 @@
+[project]
+name = "uv-fastapi-template-base"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.6",
+    "gunicorn>=23.0.0",
+    "uvicorn[standard]>=0.34.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=1.14.1",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.1",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.5",
+]
+
+[tool.pytest.ini_options]
+addopts = "-p no:warnings --cov"
+log_cli = true
+pythonpath = "./src"
+
+[tool.ruff]
+line-length = 120
+src = ["src", "tests"]
+exclude = [".venv"]
+
+[tool.ruff.lint]
+select = [
+    "F",  # PyFlakes エラー
+    "E",  # Pycodestyle エラー
+    "I",  # インポートエラー
+]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_defs = false

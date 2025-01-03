@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/.git": false
+  },
+  "ruff.configuration": "${workspaceFolder}/pyproject.toml",
+  "mypy-type-checker.path": [
+    "${workspaceFolder}/.venv/bin/mypy"
+  ],
+  "mypy-type-checker.args": [
+    "--config-file=${workspaceFolder}/pyproject.toml"
+  ]
+}
