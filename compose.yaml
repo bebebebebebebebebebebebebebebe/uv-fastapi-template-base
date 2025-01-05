@@ -1,0 +1,18 @@
+services:
+  web:
+    tty: true
+    stdin_open: true
+    build: .
+    ports:
+      - "8000:8000"
+
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /tmp
+          ignore:
+            - .venv/
+
+        - action: rebuild
+          path: ./pyproject.toml
