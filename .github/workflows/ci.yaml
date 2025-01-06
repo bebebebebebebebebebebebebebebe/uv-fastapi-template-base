@@ -18,4 +18,4 @@ jobs:
         run: docker compose up -d
 
       - name: Test Container
-        run: docker compose exec web pytest -s
+        run: docker compose exec web uv run pytest -s
