@@ -19,3 +19,6 @@ jobs:
 
       - name: Test Container
         run: docker compose exec web uv run pytest -s
+
+      - name: Run pre-commit checks
+        run: docker compose exec web uv run pre-commit run --all-files
